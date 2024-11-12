@@ -6,7 +6,7 @@ public class ResourceManager : MonoBehaviour
     public TextMeshProUGUI resourceText;  // 현재 자원 양 
     public int resourceAmount = 0;  // 자원 양
     public int resourcePerClick = 1;  // 클릭 시 얻는 자원량
-    public Collider2D clickableArea;  // 클릭 영역 (2d 콜라이더 사용)
+    public Collider2D clickableArea;  // 클릭 영역 (2D 콜라이더 사용)
 
     void Start()
     {
@@ -61,6 +61,27 @@ public class ResourceManager : MonoBehaviour
     // 자원 UI 업데이트
     private void UpdateResourceDisplay()
     {
-        resourceText.text = resourceAmount.ToString();  // 자원 UI 텍스트 갱신
+        resourceText.text = FormatResourceAmount(resourceAmount);  // 자원 양을 단위별
+    }
+
+    // 자원 양을 k, M, B 단위
+    private string FormatResourceAmount(int amount)
+    {
+        if (amount >= 1_000_000_000)  
+        {
+            return (amount / 1_000_000_000f).ToString("0.##") + "B";  // B
+        }
+        else if (amount >= 1_000_000)  
+        {
+            return (amount / 1_000_000f).ToString("0.##") + "M";  // M
+        }
+        else if (amount >= 1_000)  
+        {
+            return (amount / 1_000f).ToString("0.##") + "k";  // k
+        }
+        else
+        {
+            return amount.ToString();  // 1000 미만
+        }
     }
 }
