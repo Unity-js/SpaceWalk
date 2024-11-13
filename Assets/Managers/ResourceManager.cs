@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-
 public class ResourceManager : MonoBehaviour
 {
     public TextMeshProUGUI resourceText;  // 현재 자원 양 
