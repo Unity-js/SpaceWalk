@@ -57,6 +57,11 @@ public class ResourceManager : MonoBehaviour
         }
         return false;  // 자원 부족
     }
+    public void AddResources(int amount) // 자동 자원 획득
+    {
+        resourceAmount += amount;
+        UpdateResourceDisplay();  // UI 업데이트
+    }
 
     // 자원 UI 업데이트
     private void UpdateResourceDisplay()
