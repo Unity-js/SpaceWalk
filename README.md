@@ -20,6 +20,10 @@ Unity를 사용하여, 클릭으로 일반적인 자원을 수집, 업그레이�
 
 자동 자원 획득 , 자동 클릭 시스템
 
+## 📌 PreView
+
+![SpaceWalk](https://github.com/user-attachments/assets/c6efd6ef-ddc9-49dc-adf7-f12ac9b9abe5)
+
 ## 📌 Optional
  
 <details>
